@@ -1457,18 +1457,16 @@ h2 em {
     /* ---------- VERSE ---------- */
 
     .quran-verse {
-        width: 100%;
-
-        max-width: 340px;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        padding: 0 8px;
-
-        font-size: 17px;
-
-        line-height: 1.45;
+        width:100%;
+        max-width:360px;
+        margin:0 auto 8px;
+        padding:0 14px;
+        font-size:16px;
+        line-height:1.6;
+        white-space:normal;
+        overflow:visible;
+        word-break:normal;
+        overflow-wrap:break-word;
     }
 
     .quran-reference {
@@ -1906,7 +1904,9 @@ h2 em {
     }
 
     .quran-verse {
-        font-size: 16px;
+        font-size:15px;
+        line-height:1.6;
+        padding:0 12px;
     }
 
     .hero-subtitle {
