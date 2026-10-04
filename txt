@@ -1,0 +1,530 @@
+/* =========================================================
+   ROYAL WEDDING INTRO
+   ========================================================= */
+
+.royal-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background:
+        radial-gradient(circle at center, rgba(133, 82, 38, 0.28), transparent 38%),
+        radial-gradient(circle at 50% 20%, rgba(218, 174, 82, 0.10), transparent 30%),
+        linear-gradient(135deg, #21070e, #3a1019 45%, #17050a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: visibility 1.2s ease;
+}
+
+
+/* Gold ambient glow */
+
+.intro-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(218, 174, 82, 0.08);
+    filter: blur(80px);
+    animation: introGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes introGlow {
+    from {
+        transform: scale(0.85);
+        opacity: 0.45;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 0.8;
+    }
+}
+
+
+/* Intro content */
+
+.intro-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    width: min(90%, 600px);
+}
+
+
+/* Top text */
+
+.intro-top {
+    margin: 0 0 25px;
+    color: #dcb968;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    opacity: 0;
+    animation: introFadeDown 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+
+/* Main symbol */
+
+.intro-symbol {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 28px;
+    border: 1px solid rgba(220, 185, 104, 0.65);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e7c56e;
+    font-size: 22px;
+    box-shadow:
+        0 0 25px rgba(216, 174, 77, 0.15),
+        inset 0 0 20px rgba(216, 174, 77, 0.05);
+    opacity: 0;
+    transform: scale(0.3) rotate(-45deg);
+    animation: introSymbol 1.2s ease forwards;
+    animation-delay: 0.8s;
+}
+
+
+/* Title */
+
+.intro-title {
+    margin: 0;
+    color: #f7ead0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(58px, 9vw, 100px);
+    line-height: 0.82;
+    font-weight: 500;
+    letter-spacing: -2px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: introTitle 1.3s ease forwards;
+    animation-delay: 1.1s;
+}
+
+.intro-title em {
+    color: #dcb968;
+    font-weight: 400;
+}
+
+
+/* Gold line */
+
+.intro-line {
+    width: 0;
+    height: 1px;
+    margin: 34px auto 20px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #e1c16b,
+        transparent
+    );
+    animation: introLine 1.2s ease forwards;
+    animation-delay: 1.8s;
+}
+
+
+/* Subtitle */
+
+.intro-subtitle {
+    margin: 0;
+    color: rgba(247, 234, 208, 0.7);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    font-style: italic;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: introFadeUp 1s ease forwards;
+    animation-delay: 2s;
+}
+
+
+/* Open button */
+
+.open-invitation {
+    position: relative;
+    margin-top: 42px;
+    padding: 15px 30px;
+    min-width: 205px;
+    border: 1px solid rgba(222, 188, 105, 0.75);
+    background: rgba(255, 255, 255, 0.025);
+    color: #ecd58d;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: introButton 1s ease forwards;
+    animation-delay: 2.4s;
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+.open-invitation span {
+    position: relative;
+    z-index: 2;
+}
+
+.open-invitation b {
+    margin-left: 12px;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.open-invitation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(232, 196, 104, 0.18),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+}
+
+.open-invitation:hover::before {
+    transform: translateX(100%);
+}
+
+.open-invitation:hover {
+    background: rgba(218, 174, 82, 0.12);
+    color: #fff3ca;
+    box-shadow: 0 0 35px rgba(218, 174, 82, 0.18);
+    transform: translateY(-2px);
+}
+
+
+/* Small hint */
+
+.intro-hint {
+    margin-top: 14px;
+    color: rgba(247, 234, 208, 0.35);
+    font-family: "Montserrat", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: introFadeUp 1s ease forwards;
+    animation-delay: 2.8s;
+}
+
+
+/* =========================================================
+   CURTAINS
+   ========================================================= */
+
+.intro-curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background:
+        linear-gradient(
+            90deg,
+            #160409,
+            #360d17 50%,
+            #1b050a
+        );
+    z-index: 10;
+    transition:
+        transform 1.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.curtain-left {
+    left: 0;
+}
+
+.curtain-right {
+    right: 0;
+}
+
+
+/* Open state */
+
+.royal-intro.opened {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.royal-intro.opened .curtain-left {
+    transform: translateX(-100%);
+}
+
+.royal-intro.opened .curtain-right {
+    transform: translateX(100%);
+}
+
+.royal-intro.opened .intro-content {
+    opacity: 0;
+    transform: scale(1.08);
+    transition:
+        opacity 0.6s ease,
+        transform 1.2s ease;
+}
+
+
+/* =========================================================
+   INTRO PARTICLES
+   ========================================================= */
+
+.intro-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.intro-particles span {
+    position: absolute;
+    bottom: -30px;
+    color: rgba(226, 190, 101, 0.55);
+    font-size: 14px;
+    opacity: 0;
+    animation: introParticle linear infinite;
+}
+
+.intro-particles span:nth-child(1) {
+    left: 8%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.intro-particles span:nth-child(2) {
+    left: 18%;
+    animation-duration: 12s;
+    animation-delay: 3s;
+}
+
+.intro-particles span:nth-child(3) {
+    left: 31%;
+    animation-duration: 10s;
+    animation-delay: 5s;
+}
+
+.intro-particles span:nth-child(4) {
+    left: 45%;
+    animation-duration: 14s;
+    animation-delay: 2s;
+}
+
+.intro-particles span:nth-child(5) {
+    left: 58%;
+    animation-duration: 11s;
+    animation-delay: 4s;
+}
+
+.intro-particles span:nth-child(6) {
+    left: 70%;
+    animation-duration: 13s;
+    animation-delay: 1s;
+}
+
+.intro-particles span:nth-child(7) {
+    left: 82%;
+    animation-duration: 10s;
+    animation-delay: 6s;
+}
+
+.intro-particles span:nth-child(8) {
+    left: 92%;
+    animation-duration: 15s;
+    animation-delay: 3s;
+}
+
+.intro-particles span:nth-child(9) {
+    left: 37%;
+    animation-duration: 12s;
+    animation-delay: 7s;
+}
+
+.intro-particles span:nth-child(10) {
+    left: 63%;
+    animation-duration: 9s;
+    animation-delay: 5s;
+}
+
+@keyframes introParticle {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(25px)
+            rotate(180deg);
+        opacity: 0.45;
+    }
+
+    90% {
+        opacity: 0.15;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            translateX(-20px)
+            rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   INTRO ANIMATIONS
+   ========================================================= */
+
+@keyframes introFadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes introFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes introSymbol {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-45deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.15) rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes introTitle {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes introLine {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 160px;
+    }
+}
+
+@keyframes introButton {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .intro-title {
+        font-size: clamp(52px, 16vw, 76px);
+        line-height: 0.85;
+    }
+
+    .intro-symbol {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 24px;
+    }
+
+    .intro-top {
+        font-size: 8px;
+        letter-spacing: 4px;
+    }
+
+    .intro-subtitle {
+        font-size: 17px;
+    }
+
+    .open-invitation {
+        margin-top: 36px;
+        padding: 14px 24px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .royal-intro *,
+    .royal-intro *::before,
+    .royal-intro *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
