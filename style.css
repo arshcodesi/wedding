@@ -2294,3 +2294,67 @@ p {
         font-size: 21px !important;
     }
 }
+/* FINAL NAME FIT - MOBILE */
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto !important;
+        padding: 0 !important;
+
+        font-size: 25px !important;
+        line-height: 1 !important;
+
+        letter-spacing: -0.02em !important;
+
+        white-space: nowrap !important;
+        overflow: visible !important;
+
+        transform: none !important;
+    }
+
+    .hero h1 span {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        white-space: nowrap !important;
+
+        font-size: 25px !important;
+        line-height: 1 !important;
+
+        letter-spacing: -0.02em !important;
+
+        transform: none !important;
+    }
+
+    .hero h1 small {
+        display: block !important;
+
+        margin: 7px 0 !important;
+
+        font-size: 12px !important;
+        line-height: 1 !important;
+    }
+}
+
+
+/* Smaller phones */
+
+@media (max-width: 380px) {
+
+    .hero h1,
+    .hero h1 span {
+        font-size: 22px !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    .hero h1 small {
+        font-size: 11px !important;
+        margin: 6px 0 !important;
+    }
+}
