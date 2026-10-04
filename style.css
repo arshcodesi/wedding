@@ -1,34 +1,66 @@
 /* =========================================================
-   ROYAL ISLAMIC RING CEREMONY INVITATION
-   CLEAN RESPONSIVE VERSION
+   ROYAL WEDDING INVITATION
+   CLEAN RESPONSIVE CSS
    ========================================================= */
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+   :root {
+    --burgundy: #3a0d18;
+    --burgundy-dark: #220710;
+    --burgundy-light: #541521;
+
+    --gold: #d8b568;
+    --gold-light: #ead08c;
+    --gold-soft: #c9a65d;
+
+    --ivory: #fbf7ef;
+    --white: #fffdf8;
+    --text-dark: #351a18;
+    --muted: #8d7168;
+
+    --serif: "Cormorant Garamond", serif;
+    --sans: "Montserrat", sans-serif;
+}
+
 
 /* =========================================================
    RESET
    ========================================================= */
 
-   * {
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
     width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
-    min-width: 0;
-    background: #f7f0e3;
-    color: #30251e;
-    font-family: "Montserrat", sans-serif;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
+
+    background: var(--ivory);
+    color: var(--text-dark);
+
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
 }
@@ -39,53 +71,17 @@ a {
 }
 
 button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-h1,
-h2,
-h3,
-.ceremony-name,
-.couple-names,
-.final-names {
-    font-family: "Cormorant Garamond", serif;
+input,
+textarea,
+select {
+    font: inherit;
 }
 
 h1,
 h2,
 h3,
 p {
-    max-width: 100%;
-    overflow-wrap: break-word;
-}
-
-
-/* =========================================================
-   GENERAL TYPOGRAPHY
-   ========================================================= */
-
-h2 {
-    font-size: clamp(2.7rem, 6vw, 4.8rem);
-    line-height: 0.95;
-    font-weight: 500;
-}
-
-h2 em {
-    color: #b58a3b;
-    font-weight: 400;
-}
-
-.section-label {
-    color: #a4772e;
-    font-size: 0.62rem;
-    letter-spacing: 0.35em;
-    font-weight: 600;
-    margin-bottom: 1.7rem;
-}
-
-.section-label.light {
-    color: #d9b66d;
+    margin-top: 0;
 }
 
 
@@ -94,93 +90,114 @@ h2 em {
    ========================================================= */
 
 .hero {
-    width: 100%;
-    min-height: 100svh;
     position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    text-align: center;
-    overflow: hidden;
+    padding: 80px 24px;
 
-    padding: 70px 30px;
+    overflow: hidden;
 
     background:
         radial-gradient(
-            circle at 50% 35%,
-            rgba(185, 140, 54, 0.32),
-            transparent 28%
+            circle at 50% 45%,
+            rgba(145, 75, 48, 0.32),
+            transparent 42%
         ),
         radial-gradient(
-            circle at 10% 20%,
-            rgba(211, 168, 86, 0.18),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(211, 168, 86, 0.18),
-            transparent 25%
+            circle at 50% 100%,
+            rgba(105, 47, 30, 0.22),
+            transparent 45%
         ),
         linear-gradient(
             135deg,
-            #270c12 0%,
-            #4c111c 45%,
-            #26090f 100%
+            #260812 0%,
+            #4a111e 48%,
+            #280812 100%
         );
+
+    color: var(--white);
 }
 
 
-/* Hero dark overlay */
+/* Subtle background glow */
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            rgba(30, 5, 10, 0.10),
-            rgba(30, 5, 10, 0.35)
-        );
+.hero::marker {
+    display: none;
 }
 
 
-/* =========================================================
-   HERO GOLD FRAMES
-   ========================================================= */
+/* Outer gold frame */
 
 .hero::before {
     content: "";
+
     position: absolute;
 
     top: 24px;
-    left: 24px;
     right: 24px;
     bottom: 24px;
+    left: 24px;
 
-    border: 1px solid rgba(220, 185, 105, 0.75);
+    border: 1px solid rgba(220, 185, 105, 0.72);
 
     pointer-events: none;
+
     z-index: 2;
 
     box-shadow:
         inset 0 0 30px rgba(220, 185, 105, 0.025),
-        0 0 25px rgba(220, 185, 105, 0.04);
+        0 0 30px rgba(220, 185, 105, 0.04);
 }
+
+
+/* Inner gold frame */
 
 .hero::after {
     content: "";
+
     position: absolute;
 
     top: 31px;
-    left: 31px;
     right: 31px;
     bottom: 31px;
+    left: 31px;
 
     border: 1px solid rgba(220, 185, 105, 0.25);
 
     pointer-events: none;
+
     z-index: 2;
+}
+
+
+/* Background overlay */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.025),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.18)
+        );
+
+    pointer-events: none;
+
+    z-index: 0;
 }
 
 
@@ -190,33 +207,44 @@ h2 em {
 
 .hero-content {
     position: relative;
+
     z-index: 5;
 
     width: 100%;
-    max-width: 950px;
+    max-width: 900px;
 
-    padding: 30px 20px;
+    margin: 0 auto;
 
-    color: #fff;
+    padding: 0;
+
+    text-align: center;
+
+    color: var(--white);
 }
 
 
-/* Small gold top ornament */
+/* Decorative top line */
 
 .hero-content::before {
-    content: "✦";
+    content: "";
 
     position: absolute;
 
-    top: -20px;
+    top: -25px;
     left: 50%;
+
+    width: 110px;
+    height: 1px;
 
     transform: translateX(-50%);
 
-    color: rgba(220, 185, 105, 0.75);
-
-    font-family: "Cormorant Garamond", serif;
-    font-size: 20px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
 }
 
 
@@ -225,46 +253,48 @@ h2 em {
    ========================================================= */
 
 .bismillah {
-    color: #e7c875;
+    display: block;
 
-    font-family: "Cormorant Garamond", serif;
+    width: 100%;
+    max-width: 100%;
 
-    font-size: 25px;
-    line-height: 1.4;
+    margin: 0 auto 20px;
 
-    letter-spacing: 1px;
+    padding: 0 10px;
 
-    margin: 0 0 20px;
+    color: var(--gold-light);
 
-    text-shadow:
-        0 0 20px rgba(231, 200, 117, 0.12);
+    font-family: var(--serif);
 
-    opacity: 0;
+    font-size: clamp(20px, 2.5vw, 27px);
 
-    animation:
-        islamicFade 1.2s ease forwards;
+    font-weight: 500;
 
-    animation-delay: 0.2s;
+    line-height: 1.5;
+
+    letter-spacing: 0.5px;
+
+    text-align: center;
+
+    opacity: 1;
 }
 
 
 /* =========================================================
-   ISLAMIC ORNAMENT
+   SMALL ISLAMIC ORNAMENT
    ========================================================= */
 
 .islamic-ornament {
-    color: #d6b25e;
+    margin: 0 auto 16px;
 
-    font-size: 14px;
+    color: var(--gold);
 
-    margin-bottom: 20px;
+    font-size: 16px;
 
-    opacity: 0;
+    line-height: 1;
 
-    animation:
-        islamicFade 1s ease forwards;
-
-    animation-delay: 0.6s;
+    text-shadow:
+        0 0 18px rgba(220, 181, 105, 0.35);
 }
 
 
@@ -273,109 +303,163 @@ h2 em {
    ========================================================= */
 
 .quran-verse {
+    display: block;
+
     width: 100%;
-    max-width: 600px;
+    max-width: 620px;
 
-    margin: 0 auto 8px;
+    margin: 0 auto 9px;
 
-    color: rgba(255, 250, 240, 0.92);
+    padding: 0 16px;
 
-    font-family: "Cormorant Garamond", serif;
+    color: rgba(255, 250, 240, 0.94);
 
-    font-size: 22px;
+    font-family: var(--serif);
+
+    font-size: clamp(17px, 2.1vw, 22px);
+
     font-style: italic;
 
-    line-height: 1.45;
+    font-weight: 400;
+
+    line-height: 1.5;
 
     text-align: center;
 
-    opacity: 0;
+    white-space: normal;
 
-    animation:
-        islamicFade 1.2s ease forwards;
+    overflow: visible;
 
-    animation-delay: 0.9s;
-}
+    overflow-wrap: break-word;
 
-.quran-reference {
-    color: rgba(226, 196, 119, 0.65);
+    word-break: normal;
 
-    font-family: "Montserrat", sans-serif;
+    opacity: 1;
 
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    margin: 0 0 28px;
-
-    opacity: 0;
-
-    animation:
-        islamicFade 1s ease forwards;
-
-    animation-delay: 1.2s;
+    visibility: visible;
 }
 
 
 /* =========================================================
-   HERO NAMES
+   QURAN REFERENCE
    ========================================================= */
 
-.hero h1 {
-    position: relative;
-    z-index: 5;
+.quran-reference {
+    display: block;
 
     width: 100%;
 
-    font-size: clamp(4rem, 13vw, 10rem);
+    margin: 0 auto 25px;
 
-    line-height: 0.78;
+    padding: 0 10px;
+
+    color: rgba(226, 196, 119, 0.78);
+
+    font-family: var(--sans);
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ORNAMENT
+   ========================================================= */
+
+.ornament {
+    margin: 0 auto 18px;
+
+    color: var(--gold);
+
+    font-size: 18px;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 20px rgba(220, 181, 105, 0.35);
+}
+
+
+/* =========================================================
+   COUPLE NAMES
+   ========================================================= */
+
+.hero h1 {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    color: var(--white);
+
+    font-family: var(--serif);
+
+    font-size: clamp(52px, 8vw, 104px);
 
     font-weight: 500;
 
-    letter-spacing: -0.035em;
+    line-height: 0.88;
+
+    letter-spacing: -0.025em;
+
+    text-align: center;
+
+    overflow-wrap: normal;
+
+    word-break: normal;
 
     text-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.35),
-        0 0 35px rgba(209, 166, 75, 0.12);
-
-    opacity: 0;
-
-    animation:
-        royalNames 1.4s ease forwards;
-
-    animation-delay: 1.5s;
+        0 4px 22px rgba(0, 0, 0, 0.28),
+        0 0 35px rgba(209, 166, 75, 0.10);
 }
+
 
 .hero h1 span {
     display: block;
 
-    color: #fffdf8 !important;
+    width: 100%;
+    max-width: 100%;
 
-    -webkit-text-fill-color: #fffdf8 !important;
+    margin: 0 auto;
 
-    text-shadow:
-        0 3px 20px rgba(0, 0, 0, 0.25),
-        0 0 30px rgba(255, 255, 255, 0.06);
+    color: var(--white);
+
+    -webkit-text-fill-color: var(--white);
 }
+
 
 .hero h1 small {
     display: block;
 
-    font-size: 0.32em;
+    margin: 10px 0;
 
-    line-height: 1.7;
+    color: var(--gold-light);
+
+    -webkit-text-fill-color: var(--gold-light);
+
+    font-family: var(--serif);
+
+    font-size: 0.34em;
 
     font-weight: 400;
 
-    color: #dfbd69 !important;
+    line-height: 1.1;
 
-    -webkit-text-fill-color: #dfbd69 !important;
+    letter-spacing: 0;
 
     text-shadow:
-        0 0 20px rgba(223, 189, 105, 0.4);
+        0 0 20px rgba(223, 189, 105, 0.35);
 }
 
 
@@ -384,89 +468,105 @@ h2 em {
    ========================================================= */
 
 .hero-subtitle {
-    margin-top: 2.2rem;
+    width: 100%;
+    max-width: 500px;
 
-    font-size: 0.72rem;
+    margin: 28px auto 0;
 
-    letter-spacing: 0.16em;
+    padding: 0 10px;
+
+    color: rgba(243, 234, 219, 0.9);
+
+    font-family: var(--sans);
+
+    font-size: 11px;
 
     font-weight: 300;
 
-    color: #f3eadb;
+    line-height: 1.6;
 
-    opacity: 0;
+    letter-spacing: 0.16em;
 
-    animation:
-        royalFadeUp 1s ease forwards;
+    text-align: center;
 
-    animation-delay: 2s;
+    text-transform: none;
 }
 
 
 /* =========================================================
-   CEREMONY
+   CEREMONY NAME
    ========================================================= */
 
 .ceremony-name {
-    font-size: clamp(2rem, 5vw, 3.3rem);
+    width: 100%;
 
-    margin-top: 0.5rem;
+    margin: 7px auto 0;
+
+    color: var(--gold-light);
+
+    font-family: var(--serif);
+
+    font-size: clamp(30px, 4vw, 52px);
 
     font-style: italic;
 
-    color: #e4c477;
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    text-align: center;
 
     text-shadow:
-        0 0 20px rgba(205, 157, 65, 0.18);
-
-    opacity: 0;
-
-    animation:
-        royalFadeUp 1s ease forwards;
-
-    animation-delay: 2.2s;
+        0 0 22px rgba(205, 157, 65, 0.20);
 }
 
 
 /* =========================================================
-   HERO LINE + DATE
+   HERO LINE
    ========================================================= */
 
 .hero-line {
-    width: 110px;
+    width: 100px;
     height: 1px;
 
-    margin: 1.3rem auto;
+    margin: 20px auto;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            #d8ae5c,
+            var(--gold),
             transparent
         );
-
-    transform: scaleX(0);
-
-    animation:
-        royalLine 1s ease forwards;
-
-    animation-delay: 2.5s;
 }
 
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
 .hero-date {
-    color: #ead8b4;
+    width: 100%;
 
-    font-size: 0.7rem;
+    margin: 0 auto;
 
-    letter-spacing: 0.3em;
+    padding: 0 10px;
 
-    opacity: 0;
+    color: #f0dfba;
 
-    animation:
-        royalFadeUp 1s ease forwards;
+    font-family: var(--sans);
 
-    animation-delay: 2.7s;
+    font-size: 10px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.35em;
+
+    text-align: center;
+
+    text-transform: uppercase;
 }
 
 
@@ -477,33 +577,71 @@ h2 em {
 .scroll-indicator {
     position: absolute;
 
-    bottom: 24px;
+    z-index: 5;
+
     left: 50%;
+    bottom: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
 
     transform: translateX(-50%);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: rgba(226, 196, 135, 0.72);
 
-    gap: 8px;
-
-    color: rgba(238, 217, 177, 0.65);
-
-    font-size: 8px;
-    letter-spacing: 3px;
-
-    z-index: 5;
+    white-space: nowrap;
 }
 
+
 .scroll-indicator span {
+    display: block;
+
     width: 1px;
-    height: 28px;
+    height: 27px;
 
-    background: #d9b66d;
+    background:
+        linear-gradient(
+            #e0bd73,
+            transparent
+        );
 
-    animation:
-        scrollLine 2s ease-in-out infinite;
+    animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+
+.scroll-indicator small {
+    font-family: var(--sans);
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   SCROLL ANIMATION
+   ========================================================= */
+
+@keyframes scrollLine {
+    0% {
+        opacity: 0.3;
+        transform: translateY(-4px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(4px);
+    }
+
+    100% {
+        opacity: 0.3;
+        transform: translateY(-4px);
+    }
 }
 
 
@@ -512,67 +650,95 @@ h2 em {
    ========================================================= */
 
 .section {
-    width: 100%;
-
-    padding: 8rem 1.5rem;
-
-    text-align: center;
-
     position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 110px 24px;
 
     overflow: hidden;
 }
 
+
 .section-inner {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1050px;
 
     margin: 0 auto;
+
+    text-align: center;
 }
 
+
 .section-inner.narrow {
-    max-width: 800px;
+    max-width: 760px;
 }
 
 
 /* =========================================================
-   COUPLE
+   SECTION LABEL
    ========================================================= */
 
-.couple {
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(191, 145, 57, 0.08),
-            transparent 45%
-        ),
-        #fbf8f1;
+.section-label {
+    margin: 0 0 15px;
+
+    color: var(--gold-soft);
+
+    font-family: var(--sans);
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    text-transform: uppercase;
 }
 
-.couple::before,
-.couple::after {
-    content: "✦";
 
-    position: absolute;
-
-    color: rgba(170, 125, 49, 0.18);
-
-    font-size: 5rem;
+.section-label.light {
+    color: rgba(234, 208, 140, 0.85);
 }
 
-.couple::before {
-    left: 7%;
-    top: 15%;
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+.section h2 {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    color: var(--text-dark);
+
+    font-family: var(--serif);
+
+    font-size: clamp(40px, 6vw, 70px);
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    text-align: center;
 }
 
-.couple::after {
-    right: 7%;
-    bottom: 15%;
+
+.section h2 em {
+    color: var(--gold-soft);
+
+    font-style: italic;
 }
 
-.couple h2 {
-    color: #382820;
-}
+
+/* =========================================================
+   GOLD DIVIDER
+   ========================================================= */
 
 .gold-divider {
     display: flex;
@@ -580,39 +746,65 @@ h2 em {
     align-items: center;
     justify-content: center;
 
-    gap: 1rem;
+    gap: 14px;
 
-    margin: 2rem 0 3.5rem;
+    width: 100%;
+
+    margin: 30px auto;
 }
+
 
 .gold-divider::before,
 .gold-divider::after {
     content: "";
 
-    width: 80px;
+    display: block;
+
+    width: 70px;
     height: 1px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            #b68a3c
+            rgba(201, 166, 93, 0.8)
         );
 }
+
 
 .gold-divider::after {
     background:
         linear-gradient(
             90deg,
-            #b68a3c,
+            rgba(201, 166, 93, 0.8),
             transparent
         );
 }
 
+
 .gold-divider span {
-    color: #a8792e;
-    font-size: 0.9rem;
+    color: var(--gold-soft);
+
+    font-size: 17px;
+
+    line-height: 1;
 }
+
+
+/* =========================================================
+   COUPLE SECTION
+   ========================================================= */
+
+.couple {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(194, 153, 73, 0.09),
+            transparent 38%
+        ),
+        var(--ivory);
+}
+
 
 .couple-names {
     display: flex;
@@ -620,47 +812,76 @@ h2 em {
     align-items: center;
     justify-content: center;
 
-    gap: 3rem;
+    gap: 45px;
 
-    margin-bottom: 3rem;
+    width: 100%;
+
+    margin: 45px auto;
 }
 
+
+.person {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
 .person h3 {
-    font-size: clamp(2.1rem, 5vw, 3.3rem);
+    margin: 0;
+
+    color: var(--text-dark);
+
+    font-family: var(--serif);
+
+    font-size: clamp(32px, 4vw, 52px);
 
     font-weight: 500;
 
-    color: #422b25;
+    line-height: 1;
 }
+
 
 .person p {
-    color: #a47832;
+    margin: 10px 0 0;
 
-    font-size: 0.52rem;
+    color: var(--gold-soft);
 
-    letter-spacing: 0.35em;
+    font-family: var(--sans);
 
-    margin-top: 0.5rem;
+    font-size: 8px;
+
+    letter-spacing: 3px;
 }
+
 
 .ampersand {
-    font-size: 2.8rem;
+    flex: 0 0 auto;
 
-    color: #ad8037;
+    color: var(--gold-soft);
+
+    font-family: var(--serif);
+
+    font-size: 38px;
+
+    font-style: italic;
 }
 
+
 .romantic-text {
-    max-width: 610px;
+    max-width: 650px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    color: #776d63;
+    color: var(--muted);
 
-    font-size: 0.84rem;
+    font-family: var(--serif);
 
-    line-height: 2;
+    font-size: 21px;
 
-    font-weight: 300;
+    line-height: 1.65;
+
+    text-align: center;
 }
 
 
@@ -669,117 +890,101 @@ h2 em {
    ========================================================= */
 
 .details-section {
-    background:
-        linear-gradient(
-            135deg,
-            #eadcc8,
-            #f4eadb
-        );
+    background: #f4ecdf;
 }
+
 
 .event-card {
     width: 100%;
-    max-width: 700px;
+    max-width: 720px;
 
-    margin: 3.5rem auto 0;
+    margin: 55px auto 0;
 
-    padding: 3rem;
+    padding: 45px 50px;
 
-    background: rgba(255, 250, 241, 0.8);
+    background:
+        rgba(255, 253, 248, 0.78);
 
-    border: 1px solid rgba(158, 115, 42, 0.3);
+    border: 1px solid rgba(185, 144, 66, 0.22);
 
     box-shadow:
-        0 30px 80px rgba(79, 45, 19, 0.10),
-        inset 0 0 0 8px rgba(183, 141, 65, 0.035);
-
-    position: relative;
+        0 25px 70px rgba(79, 45, 19, 0.08);
 }
 
-.event-card::before,
-.event-card::after {
-    content: "";
-
-    position: absolute;
-
-    width: 35px;
-    height: 35px;
-
-    border-color: #b88c43;
-    border-style: solid;
-}
-
-.event-card::before {
-    top: 12px;
-    left: 12px;
-
-    border-width: 1px 0 0 1px;
-}
-
-.event-card::after {
-    bottom: 12px;
-    right: 12px;
-
-    border-width: 0 1px 1px 0;
-}
 
 .event-item {
     display: flex;
 
     align-items: center;
 
-    gap: 1.5rem;
+    gap: 22px;
+
+    padding: 22px 0;
+
+    border-bottom: 1px solid rgba(185, 144, 66, 0.15);
 
     text-align: left;
-
-    padding: 1.25rem 0;
-
-    border-bottom:
-        1px solid rgba(150, 110, 50, 0.14);
 }
 
+
+.event-item:last-of-type {
+    border-bottom: none;
+}
+
+
 .event-icon {
-    flex: 0 0 40px;
-
-    width: 40px;
-    height: 40px;
-
     display: flex;
+
+    flex: 0 0 42px;
 
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(174, 131, 53, 0.35);
+    width: 42px;
+    height: 42px;
 
-    border-radius: 50%;
+    color: var(--gold-soft);
 
-    color: #a47731;
+    border: 1px solid rgba(185, 144, 66, 0.3);
 
-    font-size: 1.2rem;
+    font-size: 18px;
 }
+
+
+.event-item div {
+    min-width: 0;
+}
+
 
 .event-item small {
     display: block;
 
-    color: #a47731;
+    margin-bottom: 5px;
 
-    font-size: 0.52rem;
+    color: var(--gold-soft);
 
-    letter-spacing: 0.25em;
+    font-family: var(--sans);
 
-    margin-bottom: 0.25rem;
+    font-size: 8px;
+
+    letter-spacing: 2px;
 }
+
 
 .event-item strong {
     display: block;
 
-    color: #4a3027;
+    color: var(--text-dark);
 
-    font-family: "Cormorant Garamond", serif;
+    font-family: var(--serif);
 
-    font-size: 1.35rem;
+    font-size: 24px;
 
-    font-weight: 600;
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -794,58 +999,59 @@ h2 em {
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    gap: 12px;
 
-    min-height: 46px;
+    min-height: 48px;
 
-    padding: 13px 22px;
+    padding: 13px 25px;
 
-    margin-top: 2rem;
+    border: 1px solid var(--gold-soft);
 
-    border: 1px solid #a97d37;
+    color: #6b4b27;
 
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--sans);
 
-    font-size: 0.65rem;
+    font-size: 9px;
 
-    letter-spacing: 0.12em;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    text-align: center;
 
     transition:
-        transform 0.3s ease,
         background 0.3s ease,
         color 0.3s ease,
+        transform 0.3s ease,
         box-shadow 0.3s ease;
-
-    position: relative;
-
-    overflow: hidden;
 }
+
 
 .map-button {
-    background: #5a1723;
-    color: #f8e9c7;
+    width: 100%;
+
+    margin-top: 25px;
+
+    background: rgba(216, 181, 104, 0.08);
 }
 
-.outline-button {
-    background: transparent;
-    color: #5a382c;
-}
 
 .map-button:hover,
 .outline-button:hover {
-    transform: translateY(-2px);
-}
+    background: var(--gold-soft);
 
-.map-button:hover {
-    background: #721f2e;
+    color: white;
+
+    transform: translateY(-2px);
 
     box-shadow:
-        0 12px 30px rgba(90, 23, 35, 0.18);
+        0 12px 30px rgba(155, 112, 43, 0.18);
 }
 
-.outline-button:hover {
-    background: #5a382c;
-    color: #fff;
+
+.map-button span,
+.outline-button span {
+    font-size: 14px;
 }
 
 
@@ -854,31 +1060,31 @@ h2 em {
    ========================================================= */
 
 .countdown-section {
-    width: 100%;
-
     position: relative;
 
-    padding: 8rem 1.5rem;
+    width: 100%;
+    max-width: 100%;
 
-    text-align: center;
-
-    color: #fff;
+    padding: 120px 24px;
 
     overflow: hidden;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(203, 158, 67, 0.28),
-            transparent 38%
+            rgba(142, 74, 48, 0.35),
+            transparent 48%
         ),
         linear-gradient(
             135deg,
-            #250910,
-            #4a111c 50%,
-            #26090e
+            #280812,
+            #4a111e,
+            #25070f
         );
+
+    color: white;
 }
+
 
 .countdown-overlay {
     position: absolute;
@@ -886,80 +1092,119 @@ h2 em {
 
     background:
         linear-gradient(
-            rgba(35, 5, 10, 0.1),
-            rgba(35, 5, 10, 0.3)
+            180deg,
+            rgba(0, 0, 0, 0.10),
+            rgba(0, 0, 0, 0.25)
         );
+
+    pointer-events: none;
 }
+
 
 .countdown-content {
     position: relative;
+
     z-index: 2;
 
     width: 100%;
     max-width: 1000px;
 
     margin: 0 auto;
+
+    text-align: center;
 }
+
 
 .countdown-content h2 {
-    color: #fff8eb;
+    margin: 0 auto;
+
+    color: var(--white);
+
+    font-family: var(--serif);
+
+    font-size: clamp(38px, 6vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 0.98;
 }
 
+
+.countdown-content h2 em {
+    color: var(--gold-light);
+
+    font-style: italic;
+}
+
+
 .countdown {
-    width: 100%;
-
-    margin-top: 4rem;
-
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 20px;
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 55px auto 0;
+
+    gap: 12px;
 }
+
 
 .count-box {
-    width: 130px;
+    flex: 1;
 
-    padding: 1.5rem 0.5rem;
+    min-width: 0;
 
-    border-top: 1px solid rgba(220, 185, 105, 0.4);
-    border-bottom: 1px solid rgba(220, 185, 105, 0.4);
+    text-align: center;
 }
+
 
 .count-box span {
     display: block;
 
-    color: #f0d38d;
+    color: var(--white);
 
-    font-family: "Cormorant Garamond", serif;
+    font-family: var(--serif);
 
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(42px, 7vw, 75px);
+
+    font-weight: 500;
 
     line-height: 1;
 
-    animation:
-        numberGlow 3s ease-in-out infinite alternate;
+    text-shadow:
+        0 0 20px rgba(220, 181, 105, 0.18);
 }
+
 
 .count-box small {
     display: block;
 
     margin-top: 10px;
 
-    color: rgba(242, 223, 183, 0.65);
+    color: rgba(234, 208, 140, 0.75);
 
-    font-size: 0.48rem;
+    font-family: var(--sans);
 
-    letter-spacing: 0.25em;
+    font-size: 8px;
+
+    letter-spacing: 3px;
 }
 
+
 .count-separator {
-    color: #cda85d;
+    flex: 0 0 auto;
 
-    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
 
-    font-size: 2rem;
+    font-family: var(--serif);
+
+    font-size: 35px;
+
+    line-height: 1;
 }
 
 
@@ -968,43 +1213,52 @@ h2 em {
    ========================================================= */
 
 .message-section {
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(192, 147, 63, 0.08),
-            transparent 45%
-        ),
-        #fbf8f1;
+    background: var(--ivory);
 }
+
 
 .quote-mark {
-    font-family: "Cormorant Garamond", serif;
+    height: 55px;
 
-    color: #bd9148;
+    color: var(--gold-soft);
 
-    font-size: 6rem;
+    font-family: Georgia, serif;
 
-    line-height: 0.5;
+    font-size: 75px;
+
+    line-height: 1;
 }
 
-.invitation-message {
-    font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(1.8rem, 4vw, 2.9rem);
+.invitation-message {
+    max-width: 680px;
+
+    margin: 10px auto 0;
+
+    color: var(--text-dark);
+
+    font-family: var(--serif);
+
+    font-size: clamp(26px, 3vw, 38px);
+
+    font-weight: 400;
 
     line-height: 1.35;
 
-    color: #402c26;
-
-    margin-top: 1rem;
+    text-align: center;
 }
 
+
 .with-love {
-    color: #a17734;
+    margin: 0;
 
-    font-size: 0.53rem;
+    color: var(--gold-soft);
 
-    letter-spacing: 0.35em;
+    font-family: var(--sans);
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
 }
 
 
@@ -1013,80 +1267,63 @@ h2 em {
    ========================================================= */
 
 .venue-section {
-    background:
-        linear-gradient(
-            135deg,
-            #eadcc7,
-            #f4e9d8
-        );
+    background: #f4ecdf;
 }
+
 
 .venue-card {
     width: 100%;
-    max-width: 680px;
+    max-width: 650px;
 
-    margin: 3rem auto 0;
+    margin: 50px auto 0;
 
-    padding: 4rem 2rem;
+    padding: 55px 40px;
 
-    border: 1px solid rgba(155, 123, 72, 0.35);
+    background: rgba(255, 253, 248, 0.8);
 
-    background:
-        rgba(255, 249, 237, 0.65);
+    border: 1px solid rgba(185, 144, 66, 0.22);
 
     box-shadow:
-        0 25px 70px rgba(76, 43, 20, 0.08);
+        0 25px 70px rgba(79, 45, 19, 0.08);
 
-    position: relative;
-
-    transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
+    text-align: center;
 }
 
-.venue-card::before,
-.venue-card::after {
-    content: "✦";
-
-    position: absolute;
-
-    color: #bb914b;
-
-    opacity: 0.5;
-}
-
-.venue-card::before {
-    top: 20px;
-    left: 25px;
-}
-
-.venue-card::after {
-    bottom: 20px;
-    right: 25px;
-}
 
 .venue-symbol {
-    color: #a47731;
+    margin-bottom: 20px;
 
-    font-size: 2.3rem;
+    color: var(--gold-soft);
 
-    margin-bottom: 1rem;
+    font-size: 30px;
 }
 
+
 .venue-card h3 {
-    font-size: clamp(2.3rem, 6vw, 3.8rem);
+    margin: 0 0 12px;
+
+    color: var(--text-dark);
+
+    font-family: var(--serif);
+
+    font-size: clamp(32px, 5vw, 48px);
 
     font-weight: 500;
 
-    color: #432a24;
+    line-height: 1;
 }
 
+
 .venue-card p {
-    margin-top: 0.8rem;
+    max-width: 500px;
 
-    color: #746960;
+    margin: 0 auto 28px;
 
-    font-size: 0.75rem;
+    color: var(--muted);
+
+    font-family: var(--sans);
+
+    font-size: 12px;
 
     line-height: 1.7;
 }
@@ -1097,137 +1334,143 @@ h2 em {
    ========================================================= */
 
 .final-section {
-    width: 100%;
-
     position: relative;
 
-    padding: 9rem 1.5rem;
+    width: 100%;
+    max-width: 100%;
 
-    text-align: center;
+    min-height: 70vh;
 
-    color: #fff;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 24px;
 
     overflow: hidden;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(203, 158, 67, 0.28),
-            transparent 38%
+            rgba(143, 73, 48, 0.28),
+            transparent 45%
         ),
         linear-gradient(
             135deg,
-            #250910,
-            #4a111c 50%,
-            #26090e
+            #260812,
+            #47101c,
+            #23070e
         );
+
+    color: white;
 }
+
 
 .final-content {
-    position: relative;
-    z-index: 2;
-
     width: 100%;
-    max-width: 900px;
+    max-width: 850px;
 
-    margin: auto;
+    text-align: center;
 }
 
-.final-section::before,
-.final-section::after {
-    content: "";
-
-    position: absolute;
-
-    border: 1px solid rgba(203, 166, 91, 0.20);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-.final-section::before {
-    width: 500px;
-    height: 500px;
-
-    top: -250px;
-    left: -250px;
-}
-
-.final-section::after {
-    width: 500px;
-    height: 500px;
-
-    bottom: -250px;
-    right: -250px;
-}
 
 .final-ornament {
-    color: #dcb66b;
+    margin-bottom: 25px;
 
-    font-size: 2rem;
+    color: var(--gold);
 
-    margin-bottom: 2rem;
+    font-family: var(--serif);
+
+    font-size: 28px;
 }
+
 
 .final-section h2 {
-    color: #fff8eb;
+    margin: 0;
+
+    color: var(--white);
+
+    font-family: var(--serif);
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
 }
+
+
+.final-section h2 em {
+    color: var(--gold-light);
+
+    font-style: italic;
+}
+
 
 .final-section h2 span {
     display: inline-block;
 
-    margin-left: 8px;
-
-    animation:
-        heartBeat 2s ease-in-out infinite;
+    margin-left: 10px;
 }
 
+
 .final-divider {
-    width: 120px;
+    width: 100px;
     height: 1px;
 
-    margin: 2.5rem auto;
+    margin: 35px auto;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            #d8ae5c,
+            var(--gold),
             transparent
         );
 }
 
-.final-names {
-    color: #e4c477;
 
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
+.final-names {
+    margin: 0;
+
+    color: rgba(255, 253, 248, 0.92);
+
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    line-height: 1.3;
 }
 
+
 .final-date {
-    color: rgba(241, 222, 185, 0.65);
+    margin: 10px 0 0;
 
-    font-size: 0.6rem;
+    color: rgba(234, 208, 140, 0.75);
 
-    letter-spacing: 0.3em;
+    font-family: var(--sans);
 
-    margin-top: 0.8rem;
+    font-size: 9px;
+
+    letter-spacing: 3px;
 }
 
 
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL ANIMATION
    ========================================================= */
 
 .reveal {
     opacity: 0;
 
-    transform: translateY(30px);
+    transform: translateY(25px);
 
     transition:
         opacity 0.9s ease,
         transform 0.9s ease;
 }
+
 
 .reveal.visible {
     opacity: 1;
@@ -1237,92 +1480,37 @@ h2 em {
 
 
 /* =========================================================
-   ANIMATIONS
+   COUNTDOWN GLOW
    ========================================================= */
 
-@keyframes islamicFade {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.count-box span {
+    animation:
+        numberGlow 3s ease-in-out infinite alternate;
 }
 
-@keyframes royalFadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes royalNames {
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-        filter: blur(5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-    }
-}
-
-@keyframes royalLine {
-    from {
-        transform: scaleX(0);
-    }
-
-    to {
-        transform: scaleX(1);
-    }
-}
-
-@keyframes scrollLine {
-    0% {
-        transform: scaleY(0);
-        transform-origin: top;
-        opacity: 0;
-    }
-
-    40% {
-        transform: scaleY(1);
-        opacity: 1;
-    }
-
-    80% {
-        transform: scaleY(1);
-        transform-origin: bottom;
-        opacity: 0;
-    }
-
-    100% {
-        transform: scaleY(0);
-        opacity: 0;
-    }
-}
 
 @keyframes numberGlow {
     from {
         text-shadow:
-            0 0 8px rgba(211, 166, 79, 0.1);
+            0 0 8px rgba(211, 166, 79, 0.08);
     }
 
     to {
         text-shadow:
-            0 0 28px rgba(211, 166, 79, 0.35);
+            0 0 25px rgba(211, 166, 79, 0.30);
     }
 }
+
+
+/* =========================================================
+   HEARTBEAT
+   ========================================================= */
+
+.final-section h2 span {
+    animation:
+        heartBeat 2s ease-in-out infinite;
+}
+
 
 @keyframes heartBeat {
     0%,
@@ -1351,44 +1539,35 @@ h2 em {
 @media (max-width: 800px) {
 
     .hero {
-        padding: 60px 25px;
-    }
-
-    .hero-content {
-        padding: 20px 10px;
+        padding: 75px 20px;
     }
 
     .hero h1 {
-        font-size: clamp(4rem, 14vw, 7rem);
-    }
-
-    .section {
-        padding: 6rem 1.25rem;
-    }
-
-    .event-card {
-        padding: 2.5rem;
-    }
-
-    .countdown {
-        gap: 12px;
-    }
-
-    .count-box {
-        width: 110px;
+        font-size: clamp(48px, 10vw, 75px);
     }
 
     .couple-names {
-        gap: 2rem;
+        gap: 25px;
     }
+
+    .event-card {
+        padding: 35px 30px;
+    }
+
+    .countdown {
+        gap: 7px;
+    }
+
 }
 
 
 /* =========================================================
-   MOBILE — IMPORTANT
+   MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
+
+    /* Prevent ANY accidental horizontal overflow */
 
     html,
     body {
@@ -1398,488 +1577,468 @@ h2 em {
     }
 
 
-    /* ---------- HERO ---------- */
+    /* HERO */
 
     .hero {
         width: 100%;
+        max-width: 100%;
 
         min-height: 100svh;
 
-        padding:
-            55px 14px
-            55px 14px;
+        padding: 65px 16px 75px;
+
+        overflow: hidden;
     }
+
+
+    /* Frames */
+
+    .hero::before {
+        top: 12px;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+    }
+
+
+    .hero::after {
+        top: 18px;
+        right: 18px;
+        bottom: 18px;
+        left: 18px;
+    }
+
+
+    /* Content */
 
     .hero-content {
         width: 100%;
-
         max-width: 100%;
 
-        padding:
-            15px 8px;
+        margin: 0 auto;
+
+        padding: 0;
     }
 
 
-    /* ---------- GOLD FRAMES ---------- */
-
-    .hero::before {
-        top: 10px;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-    }
-
-    .hero::after {
-        top: 16px;
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
-    }
-
-
-    /* ---------- BISMILLAH ---------- */
+    /* Bismillah */
 
     .bismillah {
-        font-size: 20px;
-
-        line-height: 1.35;
+        width: 100%;
+        max-width: 100%;
 
         margin-bottom: 13px;
 
-        padding: 0 8px;
+        padding: 0 5px;
+
+        font-size: 20px;
+
+        line-height: 1.45;
     }
+
+
+    /* Ornament */
 
     .islamic-ornament {
-        margin-bottom: 14px;
+        margin-bottom: 12px;
+
+        font-size: 14px;
     }
 
 
-    /* ---------- VERSE ---------- */
+    /* Quran */
 
     .quran-verse {
-        width:100%;
-        max-width:360px;
-        margin:0 auto 8px;
-        padding:0 14px;
-        font-size:16px;
-        line-height:1.6;
-        white-space:normal;
-        overflow:visible;
-        word-break:normal;
-        overflow-wrap:break-word;
-    }
-
-    .quran-reference {
-        font-size: 7px;
-
-        letter-spacing: 1.5px;
-
-        margin-top: 8px;
-
-        margin-bottom: 20px;
-    }
-
-
-    /* ---------- NAMES ---------- */
-
-    .hero h1 {
         width: 100%;
+        max-width: 350px;
 
-        font-size: clamp(
-            2.7rem,
-            12vw,
-            4.2rem
-        );
+        margin: 0 auto 7px;
 
-        line-height: 0.88;
+        padding: 0 4px;
 
-        letter-spacing: -0.025em;
-    }
+        font-size: 16px;
 
-    .hero h1 span {
-        width: 100%;
+        line-height: 1.55;
+
+        text-align: center;
 
         white-space: normal;
+
+        overflow: visible;
+
+        overflow-wrap: break-word;
 
         word-break: normal;
     }
 
-    .hero h1 small {
-        font-size: 0.4em;
 
-        line-height: 1.5;
+    .quran-reference {
+        margin-bottom: 18px;
 
-        margin: 5px 0;
+        padding: 0;
+
+        font-size: 7px;
+
+        letter-spacing: 1.8px;
     }
 
 
-    /* ---------- SUBTITLE ---------- */
+    /* Ornament before names */
+
+    .ornament {
+        margin-bottom: 15px;
+
+        font-size: 15px;
+    }
+
+
+    /* Names */
+
+    .hero h1 {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        padding: 0;
+
+        font-size: clamp(43px, 12.5vw, 55px);
+
+        line-height: 0.90;
+
+        letter-spacing: -0.015em;
+
+        overflow-wrap: normal;
+
+        word-break: normal;
+    }
+
+
+    .hero h1 span {
+        width: 100%;
+        max-width: 100%;
+
+        white-space: nowrap;
+    }
+
+
+    .hero h1 small {
+        margin: 8px 0;
+
+        font-size: 0.38em;
+
+        line-height: 1;
+    }
+
+
+    /* Subtitle */
 
     .hero-subtitle {
-        margin-top: 1.6rem;
+        max-width: 270px;
 
-        padding: 0 10px;
+        margin-top: 22px;
+
+        padding: 0;
 
         font-size: 9px;
 
-        line-height: 1.6;
+        line-height: 1.55;
 
         letter-spacing: 0.12em;
     }
 
 
-    /* ---------- CEREMONY ---------- */
+    /* Ceremony */
 
     .ceremony-name {
-        font-size: 28px;
-
         margin-top: 7px;
+
+        font-size: 31px;
+
+        line-height: 1.1;
     }
 
 
-    /* ---------- DATE ---------- */
+    .hero-line {
+        width: 70px;
+
+        margin: 17px auto;
+    }
+
 
     .hero-date {
         font-size: 8px;
 
-        letter-spacing: 0.22em;
+        letter-spacing: 0.25em;
     }
 
 
-    /* ---------- SCROLL ---------- */
+    /* Scroll */
 
     .scroll-indicator {
-        bottom: 14px;
-
-        font-size: 6px;
-
-        letter-spacing: 2px;
+        bottom: 17px;
     }
+
 
     .scroll-indicator span {
         height: 20px;
     }
 
 
-    /* =====================================================
-       GENERAL MOBILE SECTIONS
-       ===================================================== */
+    .scroll-indicator small {
+        font-size: 6px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* SECTIONS */
 
     .section {
         width: 100%;
+        max-width: 100%;
 
-        padding:
-            5rem 18px;
+        padding: 80px 18px;
     }
+
 
     .section-inner {
         width: 100%;
-
         max-width: 100%;
     }
+
 
     .section-label {
         font-size: 7px;
 
-        letter-spacing: 0.25em;
-
-        margin-bottom: 1.2rem;
+        letter-spacing: 3px;
     }
 
-    h2 {
-        font-size: clamp(
-            2.2rem,
-            10vw,
-            3.2rem
-        );
+
+    .section h2 {
+        font-size: clamp(36px, 10vw, 50px);
 
         line-height: 1;
     }
 
 
-    /* =====================================================
-       COUPLE
-       ===================================================== */
+    /* COUPLE */
 
     .couple-names {
-        width: 100%;
-
         flex-direction: column;
 
-        gap: 12px;
+        gap: 22px;
 
-        margin-bottom: 2rem;
+        margin: 35px auto;
     }
+
 
     .person {
         width: 100%;
     }
 
+
     .person h3 {
-        font-size: 2.4rem;
+        font-size: 40px;
+    }
+
+
+    .person p {
+        font-size: 7px;
+    }
+
+
+    .ampersand {
+        font-size: 30px;
+    }
+
+
+    .romantic-text {
+        max-width: 340px;
+
+        font-size: 18px;
+
+        line-height: 1.6;
+    }
+
+
+    /* EVENT */
+
+    .event-card {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 35px;
+
+        padding: 25px 18px;
+    }
+
+
+    .event-item {
+        gap: 14px;
+
+        padding: 18px 0;
+    }
+
+
+    .event-icon {
+        flex: 0 0 36px;
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 15px;
+    }
+
+
+    .event-item small {
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .event-item strong {
+        font-size: 20px;
+    }
+
+
+    /* COUNTDOWN */
+
+    .countdown-section {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 85px 15px;
+    }
+
+
+    .countdown-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    .countdown-content h2 {
+        font-size: 37px;
 
         line-height: 1;
     }
 
-    .person p {
-        font-size: 7px;
-
-        letter-spacing: 0.25em;
-    }
-
-    .ampersand {
-        font-size: 2rem;
-    }
-
-    .romantic-text {
-        width: 100%;
-
-        max-width: 330px;
-
-        font-size: 13px;
-
-        line-height: 1.8;
-    }
-
-    .gold-divider {
-        margin:
-            1.5rem 0 2.5rem;
-    }
-
-    .gold-divider::before,
-    .gold-divider::after {
-        width: 45px;
-    }
-
-
-    /* =====================================================
-       EVENT CARD
-       ===================================================== */
-
-    .event-card {
-        width: 100%;
-
-        max-width: 100%;
-
-        margin-top: 2.5rem;
-
-        padding:
-            2rem 1.3rem;
-    }
-
-    .event-card::before,
-    .event-card::after {
-        width: 24px;
-        height: 24px;
-    }
-
-    .event-card::before {
-        top: 8px;
-        left: 8px;
-    }
-
-    .event-card::after {
-        bottom: 8px;
-        right: 8px;
-    }
-
-    .event-item {
-        gap: 12px;
-
-        padding:
-            1rem 0;
-    }
-
-    .event-icon {
-        flex: 0 0 34px;
-
-        width: 34px;
-        height: 34px;
-
-        font-size: 0.9rem;
-    }
-
-    .event-item small {
-        font-size: 6px;
-
-        letter-spacing: 0.18em;
-    }
-
-    .event-item strong {
-        font-size: 1.1rem;
-
-        line-height: 1.2;
-    }
-
-
-    /* =====================================================
-       BUTTONS
-       ===================================================== */
-
-    .map-button,
-    .outline-button {
-        width: 100%;
-
-        max-width: 100%;
-
-        min-height: 44px;
-
-        padding:
-            12px 15px;
-
-        font-size: 8px;
-
-        letter-spacing: 0.08em;
-    }
-
-
-    /* =====================================================
-       COUNTDOWN
-       ===================================================== */
-
-    .countdown-section {
-        padding:
-            5rem 14px;
-    }
-
-    .countdown-content {
-        width: 100%;
-
-        max-width: 100%;
-    }
 
     .countdown {
         width: 100%;
+        max-width: 100%;
 
-        margin-top: 2.5rem;
+        margin-top: 40px;
 
         gap: 3px;
     }
 
+
     .count-box {
-        width: 22%;
+        width: 23%;
 
-        min-width: 0;
-
-        padding:
-            1rem 2px;
+        flex: 1;
     }
+
 
     .count-box span {
-        font-size: clamp(
-            1.7rem,
-            8vw,
-            2.5rem
-        );
+        font-size: clamp(27px, 9vw, 40px);
     }
+
 
     .count-box small {
-        font-size: 5px;
+        margin-top: 7px;
 
-        letter-spacing: 0.12em;
+        font-size: 6px;
+
+        letter-spacing: 1.5px;
     }
+
 
     .count-separator {
-        flex: 0 0 auto;
-
-        font-size: 1rem;
+        font-size: 20px;
     }
 
 
-    /* =====================================================
-       MESSAGE
-       ===================================================== */
+    /* MESSAGE */
 
     .message-section {
-        padding:
-            5rem 20px;
+        padding: 85px 20px;
     }
+
 
     .quote-mark {
-        font-size: 4.5rem;
+        font-size: 60px;
     }
+
 
     .invitation-message {
-        font-size: 1.8rem;
+        max-width: 340px;
 
-        line-height: 1.35;
-    }
+        font-size: 25px;
 
-    .with-love {
-        font-size: 7px;
-
-        letter-spacing: 0.25em;
+        line-height: 1.4;
     }
 
 
-    /* =====================================================
-       VENUE
-       ===================================================== */
+    /* VENUE */
 
     .venue-card {
         width: 100%;
-
         max-width: 100%;
 
-        margin-top: 2.5rem;
+        margin-top: 35px;
 
-        padding:
-            3rem 1.3rem;
+        padding: 40px 22px;
     }
+
 
     .venue-card h3 {
-        font-size: clamp(
-            2rem,
-            9vw,
-            3rem
-        );
-
-        line-height: 1;
+        font-size: 37px;
     }
+
 
     .venue-card p {
-        font-size: 11px;
-
-        line-height: 1.7;
-    }
-
-    .venue-symbol {
-        font-size: 1.8rem;
+        font-size: 10px;
     }
 
 
-    /* =====================================================
-       FINAL
-       ===================================================== */
+    /* FINAL */
 
     .final-section {
         width: 100%;
+        max-width: 100%;
 
-        padding:
-            6rem 20px;
+        min-height: 65vh;
+
+        padding: 80px 20px;
     }
+
 
     .final-content {
         width: 100%;
-
         max-width: 100%;
     }
 
-    .final-section h2 {
-        font-size:
-            clamp(2.3rem, 10vw, 3.3rem);
 
-        line-height: 1.05;
+    .final-section h2 {
+        font-size: 43px;
+
+        line-height: 0.98;
     }
+
 
     .final-names {
-        font-size: 1.5rem;
-
-        line-height: 1.2;
+        font-size: 20px;
     }
+
 
     .final-date {
         font-size: 7px;
+
+        letter-spacing: 2px;
     }
 }
 
@@ -1891,42 +2050,66 @@ h2 em {
 @media (max-width: 380px) {
 
     .hero {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 13px;
+        padding-right: 13px;
     }
 
-    .hero h1 {
-        font-size: 2.45rem;
-    }
 
     .bismillah {
         font-size: 18px;
     }
 
+
     .quran-verse {
-        font-size:15px;
-        line-height:1.6;
-        padding:0 12px;
+        max-width: 325px;
+
+        font-size: 15px;
+
+        line-height: 1.55;
     }
 
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+
     .hero-subtitle {
+        max-width: 250px;
+
         font-size: 8px;
     }
 
+
     .ceremony-name {
-        font-size: 25px;
+        font-size: 28px;
     }
 
-    .count-box span {
-        font-size: 1.55rem;
+
+    .section {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
-    .count-box small {
-        font-size: 4px;
+
+    .event-card {
+        padding-left: 15px;
+        padding-right: 15px;
     }
+
+
+    .countdown {
+        gap: 1px;
+    }
+
 
     .count-separator {
-        font-size: 0.85rem;
+        font-size: 17px;
+    }
+
+
+    .count-box small {
+        font-size: 5px;
     }
 }
 
@@ -1941,48 +2124,8 @@ h2 em {
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
-
         animation-iteration-count: 1 !important;
-
         transition-duration: 0.01ms !important;
-
         scroll-behavior: auto !important;
-    }
-}
-/* FINAL QURAN VERSE FIX */
-
-.hero .quran-verse {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 20 !important;
-
-    width: 100% !important;
-    max-width: 600px !important;
-    height: auto !important;
-
-    margin: 0 auto 10px !important;
-    padding: 0 10px !important;
-
-    color: #fffaf0 !important;
-    font-family: "Cormorant Garamond", serif !important;
-    font-size: 21px !important;
-    font-style: italic !important;
-    line-height: 1.5 !important;
-    text-align: center !important;
-
-    white-space: normal !important;
-    overflow: visible !important;
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-}
-
-@media (max-width: 600px) {
-    .hero .quran-verse {
-        font-size: 16px !important;
-        line-height: 1.6 !important;
-        padding: 0 8px !important;
-        max-width: 360px !important;
     }
 }
