@@ -2129,3 +2129,168 @@ p {
         scroll-behavior: auto !important;
     }
 }
+/* =========================================================
+   FINAL MOBILE SIZE FIX
+   ========================================================= */
+
+   @media (max-width: 600px) {
+
+    .hero {
+        padding: 45px 12px 60px !important;
+        min-height: 100svh !important;
+        overflow: hidden !important;
+    }
+
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Bismillah */
+    .bismillah {
+        font-size: 16px !important;
+        margin-bottom: 8px !important;
+        padding: 0 5px !important;
+    }
+
+    /* Small ornament */
+    .islamic-ornament {
+        font-size: 11px !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* Quran */
+    .quran-verse {
+        width: 100% !important;
+        max-width: 310px !important;
+        padding: 0 !important;
+        margin: 0 auto 5px !important;
+
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .quran-reference {
+        font-size: 6px !important;
+        letter-spacing: 1.5px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Ornament before names */
+    .ornament {
+        font-size: 11px !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* NAMES */
+    .hero h1 {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        font-size: 35px !important;
+        line-height: 0.9 !important;
+
+        letter-spacing: 0 !important;
+    }
+
+    .hero h1 span {
+        width: 100% !important;
+        white-space: nowrap !important;
+    }
+
+    .hero h1 small {
+        font-size: 13px !important;
+        margin: 5px 0 !important;
+        line-height: 1 !important;
+    }
+
+    /* "are delighted..." */
+    .hero-subtitle {
+        max-width: 220px !important;
+
+        margin-top: 14px !important;
+        padding: 0 !important;
+
+        font-size: 7px !important;
+        line-height: 1.4 !important;
+
+        letter-spacing: 0.12em !important;
+    }
+
+    /* Ring Ceremony */
+    .ceremony-name {
+        font-size: 23px !important;
+        margin-top: 4px !important;
+    }
+
+    .hero-line {
+        width: 55px !important;
+        margin: 10px auto !important;
+    }
+
+    /* Date */
+    .hero-date {
+        font-size: 6px !important;
+        letter-spacing: 0.2em !important;
+    }
+
+    /* Scroll */
+    .scroll-indicator {
+        bottom: 12px !important;
+    }
+
+    .scroll-indicator span {
+        height: 14px !important;
+    }
+
+    .scroll-indicator small {
+        font-size: 5px !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    /* Border */
+    .hero::before {
+        top: 9px !important;
+        right: 9px !important;
+        bottom: 9px !important;
+        left: 9px !important;
+    }
+
+    .hero::after {
+        top: 14px !important;
+        right: 14px !important;
+        bottom: 14px !important;
+        left: 14px !important;
+    }
+}
+
+
+/* EXTRA SMALL PHONES */
+
+@media (max-width: 380px) {
+
+    .bismillah {
+        font-size: 15px !important;
+    }
+
+    .quran-verse {
+        max-width: 285px !important;
+        font-size: 12px !important;
+    }
+
+    .hero h1 {
+        font-size: 32px !important;
+    }
+
+    .hero-subtitle {
+        font-size: 6px !important;
+    }
+
+    .ceremony-name {
+        font-size: 21px !important;
+    }
+}
