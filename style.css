@@ -2358,3 +2358,514 @@ p {
         margin: 6px 0 !important;
     }
 }
+/* =========================================================
+   FINAL ISLAMIC HERO DESIGN
+   ========================================================= */
+
+   .hero {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    min-height: 100svh !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 60px 20px 70px !important;
+
+    overflow: hidden !important;
+
+    text-align: center !important;
+}
+
+
+.hero-content {
+    position: relative !important;
+
+    z-index: 10 !important;
+
+    width: 100% !important;
+    max-width: 760px !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   BISMILLAH
+   ========================================================= */
+
+.bismillah-arabic {
+    width: 100% !important;
+
+    margin: 0 auto 12px !important;
+    padding: 0 !important;
+
+    color: #ead08c !important;
+
+    font-family: "Amiri", serif !important;
+
+    font-size: 28px !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.7 !important;
+
+    direction: rtl !important;
+
+    text-align: center !important;
+
+    white-space: normal !important;
+}
+
+
+/* =========================================================
+   SMALL ORNAMENT
+   ========================================================= */
+
+.hero .islamic-ornament {
+    margin: 0 auto 15px !important;
+
+    color: #d8b568 !important;
+
+    font-size: 13px !important;
+
+    line-height: 1 !important;
+}
+
+
+/* =========================================================
+   QURAN ARABIC
+   ========================================================= */
+
+.quran-arabic {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 650px !important;
+
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+
+    color: rgba(255, 250, 240, 0.96) !important;
+
+    font-family: "Amiri", serif !important;
+
+    font-size: 24px !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.85 !important;
+
+    direction: rtl !important;
+
+    text-align: center !important;
+
+    white-space: normal !important;
+
+    overflow: visible !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================================
+   QURAN REFERENCE
+   ========================================================= */
+
+.quran-reference {
+    margin: 8px auto 18px !important;
+    padding: 0 !important;
+
+    color: rgba(216, 181, 104, 0.82) !important;
+
+    font-family: "Montserrat", sans-serif !important;
+
+    font-size: 8px !important;
+
+    font-weight: 400 !important;
+
+    letter-spacing: 3px !important;
+
+    line-height: 1.5 !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   DECORATION
+   ========================================================= */
+
+.hero .ornament {
+    margin: 0 auto 16px !important;
+
+    color: #d8b568 !important;
+
+    font-size: 15px !important;
+
+    line-height: 1 !important;
+}
+
+
+/* =========================================================
+   NAMES
+   ========================================================= */
+
+.hero .couple-names-hero {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    color: #fffdf8 !important;
+
+    font-family: "Cormorant Garamond", serif !important;
+
+    font-size: 46px !important;
+
+    font-weight: 500 !important;
+
+    line-height: 0.95 !important;
+
+    letter-spacing: 0 !important;
+
+    text-align: center !important;
+
+    white-space: normal !important;
+
+    overflow: visible !important;
+}
+
+
+.hero .couple-names-hero span {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 auto !important;
+
+    color: #fffdf8 !important;
+
+    white-space: nowrap !important;
+}
+
+
+.hero .couple-names-hero small {
+    display: block !important;
+
+    margin: 8px 0 !important;
+
+    color: #d8b568 !important;
+
+    font-family: "Cormorant Garamond", serif !important;
+
+    font-size: 18px !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1 !important;
+}
+
+
+/* =========================================================
+   INVITATION TEXT
+   ========================================================= */
+
+.hero .hero-subtitle {
+    width: 100% !important;
+    max-width: 300px !important;
+
+    margin: 22px auto 0 !important;
+    padding: 0 !important;
+
+    color: rgba(255, 250, 240, 0.82) !important;
+
+    font-family: "Montserrat", sans-serif !important;
+
+    font-size: 8px !important;
+
+    font-weight: 300 !important;
+
+    line-height: 1.6 !important;
+
+    letter-spacing: 2px !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   RING CEREMONY
+   ========================================================= */
+
+.hero .ceremony-name {
+    margin: 5px auto 0 !important;
+
+    color: #ead08c !important;
+
+    font-family: "Cormorant Garamond", serif !important;
+
+    font-size: 34px !important;
+
+    font-style: italic !important;
+
+    font-weight: 500 !important;
+
+    line-height: 1.1 !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   LINE
+   ========================================================= */
+
+.hero .hero-line {
+    width: 65px !important;
+    height: 1px !important;
+
+    margin: 13px auto !important;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d8b568,
+        transparent
+    ) !important;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.hero .hero-date {
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    color: rgba(240, 223, 186, 0.9) !important;
+
+    font-family: "Montserrat", sans-serif !important;
+
+    font-size: 8px !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.5 !important;
+
+    letter-spacing: 3px !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 100svh !important;
+
+        padding: 45px 14px 55px !important;
+    }
+
+
+    .hero-content {
+        max-width: 100% !important;
+    }
+
+
+    /* Bismillah */
+
+    .bismillah-arabic {
+        font-size: 21px !important;
+
+        line-height: 1.6 !important;
+
+        margin-bottom: 7px !important;
+    }
+
+
+    .hero .islamic-ornament {
+        font-size: 10px !important;
+
+        margin-bottom: 9px !important;
+    }
+
+
+    /* Quran */
+
+    .quran-arabic {
+        max-width: 340px !important;
+
+        padding: 0 4px !important;
+
+        font-size: 17px !important;
+
+        line-height: 1.75 !important;
+    }
+
+
+    .quran-reference {
+        font-size: 6px !important;
+
+        letter-spacing: 2px !important;
+
+        margin-top: 5px !important;
+
+        margin-bottom: 12px !important;
+    }
+
+
+    .hero .ornament {
+        font-size: 11px !important;
+
+        margin-bottom: 10px !important;
+    }
+
+
+    /* Names */
+
+    .hero .couple-names-hero {
+        font-size: 25px !important;
+
+        line-height: 1 !important;
+
+        letter-spacing: -0.01em !important;
+    }
+
+
+    .hero .couple-names-hero span {
+        white-space: nowrap !important;
+    }
+
+
+    .hero .couple-names-hero small {
+        font-size: 12px !important;
+
+        margin: 5px 0 !important;
+    }
+
+
+    /* Invitation */
+
+    .hero .hero-subtitle {
+        max-width: 220px !important;
+
+        margin-top: 15px !important;
+
+        font-size: 6px !important;
+
+        line-height: 1.5 !important;
+
+        letter-spacing: 1.3px !important;
+    }
+
+
+    /* Ceremony */
+
+    .hero .ceremony-name {
+        font-size: 25px !important;
+
+        margin-top: 4px !important;
+    }
+
+
+    .hero .hero-line {
+        width: 50px !important;
+
+        margin: 9px auto !important;
+    }
+
+
+    /* Date */
+
+    .hero .hero-date {
+        font-size: 6px !important;
+
+        letter-spacing: 2px !important;
+    }
+
+
+    /* Frame */
+
+    .hero::before {
+        top: 10px !important;
+        right: 10px !important;
+        bottom: 10px !important;
+        left: 10px !important;
+    }
+
+
+    .hero::after {
+        top: 15px !important;
+        right: 15px !important;
+        bottom: 15px !important;
+        left: 15px !important;
+    }
+
+
+    /* Scroll */
+
+    .scroll-indicator {
+        bottom: 11px !important;
+    }
+
+    .scroll-indicator span {
+        height: 16px !important;
+    }
+
+    .scroll-indicator small {
+        font-size: 5px !important;
+
+        letter-spacing: 1.5px !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .bismillah-arabic {
+        font-size: 19px !important;
+    }
+
+
+    .quran-arabic {
+        max-width: 310px !important;
+
+        font-size: 15px !important;
+
+        line-height: 1.7 !important;
+    }
+
+
+    .hero .couple-names-hero {
+        font-size: 22px !important;
+    }
+
+
+    .hero .couple-names-hero small {
+        font-size: 11px !important;
+    }
+
+
+    .hero .ceremony-name {
+        font-size: 23px !important;
+    }
+}
